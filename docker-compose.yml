@@ -1,0 +1,16 @@
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    container_name: presenting-db
+    environment:
+      POSTGRES_DB: presenting
+      POSTGRES_USER: presenting
+      POSTGRES_PASSWORD: presenting
+    ports:
+      - "5499:5432"
+    restart: always
+
+volumes:
+  postgres_data:
